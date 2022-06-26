@@ -91,13 +91,13 @@ with mp_hands.Hands(
                         volume.SetMasterVolumeLevel(vol,None)
 
             #Parte izquierda de la imagen
-            if lmList[0][0] < left : 
+            elif lmList[0][0] < left : 
                 #Volver a diapositiva anterior
                 if gesture.simpleGesture(fingers,lmList[4],lmList[8]) == 'FIVE!': 
                     keyboard.press ('up')
                     time.sleep(2)
             #Parte central de la imgen
-            else : 
+            elif lmList[0][0]<right and lmList[0][0]>left : 
                 #Interacción del ratón
                 area_width = width - 160 * 2
                 area_height = int(area_width / aspect_screen)
